@@ -72,6 +72,7 @@ img {
     font-style: normal;
     display: block;
     padding: 24px 0px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);    
 }
 
 .info{
@@ -84,6 +85,7 @@ img {
     align-items: center;
     padding: 24px 0px;
     fill: #757575;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .infotel{
@@ -96,6 +98,7 @@ img {
     font-style: normal;
     align-items: center;
     fill: #757575;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .headertext-info {
     display: flex;
@@ -111,31 +114,17 @@ img {
 .info:focus, .infotel:hover, .infotel:focus{
     color: var(--blu);
     fill: var(--blu);
-    animation-name: changeBgColor;
-    animation-duration: 250ms;
-    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 }
-@keyframes changeBgColor {
-    0% {
-        background-color: teal;
-    }
 
-    50% {
-        background-color: orange;
-    }
-
-    100% {
-        background-color: deepskyblue;
-    }
-}
 .current {
     color: var(--blu);
 }
 .current::after{
-    width: 48px;
+    content: '';
+    display:block;
+    min-width: 48px;
     height: 4px;
-    left: 451px;
-    top: 76px;
+    max-width: 72px;
     background: #2196F3;
     border-radius: 2px;
 }
@@ -192,6 +181,7 @@ img {
     letter-spacing: 0.06em;
     color: var(--white);
     font-family: inherit;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button:hover{
     background-color: #188CE8;
@@ -366,6 +356,7 @@ img {
     padding: 0px;
     fill: #AFB1B8;
     margin-right: 10px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-comand a:hover, .social-comand a:focus{
     background-color: var(--blu);
@@ -419,6 +410,7 @@ img {
     align-items: center;
     fill: #AFB1B8;;
     display: flex;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-clients:hover, .icon-clients:focus{
     fill: var(--blu);
@@ -438,6 +430,7 @@ img {
 }
 .footer-text {
     padding-top: 20px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .adress li{
     margin: 9px 0px;
@@ -455,6 +448,7 @@ img {
     color: var(--white);
     text-decoration: none;
     font-style: normal;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .google:hover, .google:focus {
@@ -494,6 +488,7 @@ img {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social a{
     height: 44px;
@@ -555,6 +550,7 @@ img {
     margin: 4px;
     border: none;
     border-radius: 4px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 .button1 {
     width: 73px;
@@ -615,6 +611,7 @@ img {
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .makers h2{
     font-weight: 700;
@@ -635,27 +632,25 @@ img {
     padding: 24px 20px;
 }
 .over:hover .overlay {
-    transform: translatex(0);
     opacity: 1;
+    color: var(--white);
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.03em;
+    transform: translateY(0%);
 } 
 
 .overlay {
     position: absolute;
-    
     margin: 0;
     opacity: 0;
     top: 0%;
     left: 0%;
-    width: 370px;
-    height: 294px;
-    font-size: 18px;
-    line-height: 28px;
-    letter-spacing: 0.03em;
-    color: var(--white);
+    width: 332px;
+    height: 168px;
+    padding: 63px 24px;
     background: rgba(33, 150, 243, 0.9);
-    transform: translateY(100%);
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .makerss:hover, .makerss:focus{
@@ -664,10 +659,43 @@ img {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+
 /* -------script */
+.backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 .backdrop.is-hidden {
     opacity: 0;
     pointer-events: none;
+}
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 581px;
+    min-width: 528px;
+    background-color: var(--white);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+.close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 8px;
+    top: 8px;
+    background: #FFFFFF;
+    background-image: url(../images/Vector.svg);
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-position: center;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 /*my study-------------------------------------------------------------------------------
 background-image: linear-gradient(to right, #553c9a, #ee4b2b, #00c2cb, #ff7f50, #553c9a);
